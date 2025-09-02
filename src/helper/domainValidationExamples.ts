@@ -29,7 +29,7 @@ export async function getRemoteDataSafely(url: string) {
   } catch (error) {
     return {
       success: false,
-      error: error.message
+      error: '请求失败'
     };
   }
 }
@@ -62,7 +62,7 @@ export async function exampleApiWithValidation(req: Request) {
   } catch (error) {
     return new Response(JSON.stringify({
       success: false,
-      error: `请求失败: ${error.message}`
+      error: `请求失败`
     }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' }
