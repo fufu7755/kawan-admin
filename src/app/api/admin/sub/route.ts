@@ -8,16 +8,7 @@ import xss from 'xss';
 connect();
 
 export const GET = async (req: NextRequest) => {
-  // 获取用户id
-  const userId = getDataFromToken(req);
-
-  // 如果没有用户id 返回False
-  if (!userId) {
-    return NextResponse.json({
-      success: false,
-      errorMessage: 'Please login',
-    });
-  }
+  
   let per = (req.nextUrl.searchParams.get('per') as any) * 1 || 10;
   let page = (req.nextUrl.searchParams.get('page') as any) * 1 || 1;
 
