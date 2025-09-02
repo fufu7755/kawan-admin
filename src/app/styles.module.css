@@ -1,0 +1,88 @@
+/* styles/Home.module.css */
+.layout {
+  background: #0d0d0d;
+}
+
+.header {
+  background: #1a1a1a;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
+.content {
+  padding: 50px;
+  text-align: center;
+  background: linear-gradient(90deg, #0d0d0d 0%, #1a1a1a 100%);
+  color: #fff;
+}
+
+.hero {
+  margin-bottom: 40px;
+}
+
+.customTitle {
+  color: #00c7ff !important;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  color: #00c7ff;
+  font-size: 20px;
+}
+
+.profile {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.customProfileTitle {
+  color: #fff !important;
+  margin-top: 20px;
+}
+
+.profileDescription {
+  color: #ccc;
+}
+
+.blogSection,
+.linksSection {
+  margin-bottom: 40px;
+}
+
+.sectionTitle {
+  color: #00c7ff !important;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: #1a1a1a;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+.customCardTitle {
+  color: #00c7ff !important;
+}
+
+.link {
+  color: #00c7ff;
+}
+
+.footer {
+  text-align: center;
+  color: #aaa;
+  background: #1a1a1a;
+  padding: 20px 0;
+}
