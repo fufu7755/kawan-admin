@@ -40,6 +40,7 @@ function SubPage() {
     )
       .then((res) => res.json())
       .then((res) => {
+        console.log(res);
         setList(res.data.list);
         setTotal(res.data.total);
       })
