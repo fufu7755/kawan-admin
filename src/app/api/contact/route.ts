@@ -3,6 +3,7 @@ import { connect } from '@/db';
 import Msg from '@/models/msg';
 import { getDataFromToken } from '@/helper/getDataFromToken';
 import xss from 'xss';
+import { withValidation, validators } from '@/helper/apiValidator';
 
 // 数据库连接
 connect();
@@ -28,20 +29,21 @@ export const GET = async (req: NextRequest) => {
   });
 };
 
-
-// post请求
-export const POST = async (req: NextRequest) => {
+// 使用验证装饰器的POST请求
+export const POST = withValidation(validators.contactForm)(async (req: NextRequest, data: any) => {
   try {
-
-    // 获取请求体
-    const data = await req.json();
+    // 数据已经通过验证，可以直接使用
     const name = xss(data.name);
     const email = xss(data.email);
-    // 创建文章
+    const message = xss(data.message || '');
+    
+    // 创建消息
     const res = await new Msg({
       name,
       email,
+      message,
     }).save();
+    
     return NextResponse.json({
       success: true,
       errorMessage: 'Success'
@@ -53,4 +55,4 @@ export const POST = async (req: NextRequest) => {
       errorMessage: error,
     });
   }
-};
+});

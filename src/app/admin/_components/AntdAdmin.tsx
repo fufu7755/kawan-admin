@@ -46,23 +46,28 @@ function AntdAdmin({ children }: any) {
               {
                 key: '/admin/dashboard',
                 icon: <DashboardOutlined />,
-                label: '看板',
+                label: 'Dashboard',
               },
               {
-                key: '/admin/base',
-                icon: <UserOutlined />,
-                label: '基础管理',
-              },
-              {
-                key: '/admin/category',
-                icon: <FolderOpenOutlined />,
-                label: '分类管理',
-              },
-              {
-                key: '/admin/menu',
+                key: '/admin/sub',
                 icon: <ReadOutlined />,
-                label: '菜单管理',
-              },
+                label: 'Subscribe',
+              }
+              // {
+              //   key: '/admin/base',
+              //   icon: <UserOutlined />,
+              //   label: '基础管理',
+              // },
+              // {
+              //   key: '/admin/category',
+              //   icon: <FolderOpenOutlined />,
+              //   label: '分类管理',
+              // },
+              // {
+              //   key: '/admin/menu',
+              //   icon: <ReadOutlined />,
+              //   label: '菜单管理',
+              // },
             ]}
           />
         </Sider>

@@ -9,7 +9,7 @@ function LoginPage() {
 
   return (
     <div className="login-form pt-20">
-      <Card title="Mi 管理后台" className="w-3/5 !mx-auto">
+      <Card title="Kawan Admin Dashboard" className="w-3/5 !mx-auto">
         <Form
           labelCol={{ span: 3 }}
           onFinish={async (v) => {
@@ -21,22 +21,22 @@ function LoginPage() {
 
             if (res.success) {
               nav.push('/admin/dashboard');
-              message.success('登陆成功');
+              message.success('Login Success');
             } else {
               message.error(res.errorMessage);
             }
             setLoading(false); // 请求完成后取消加载状态
           }}
         >
-          <Form.Item name="userName" label="用户名">
-            <Input placeholder="请输入用户名" />
+          <Form.Item name="userName" label="User Name">
+            <Input placeholder="Please enter the username" />
           </Form.Item>
-          <Form.Item name="password" label="密码">
-            <Input.Password placeholder="请输入密码" />
+          <Form.Item name="password" label="Password">
+            <Input.Password placeholder="Please enter the password" />
           </Form.Item>
           <Form.Item>
             <Button block type="primary" htmlType="submit" loading={loading}>
-              登陆
+              Login
             </Button>
           </Form.Item>
         </Form>
