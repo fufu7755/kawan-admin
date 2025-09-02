@@ -184,11 +184,17 @@ function getDefaultKey(req: NextRequest): string {
 // 清理过期的记录（可选，用于内存管理）
 export function cleanupExpiredRecords(): void {
   const now = Date.now();
-  for (const [key, record] of requestCounts.entries()) {
+  const keysToDelete: string[] = [];
+  
+  requestCounts.forEach((record, key) => {
     if (now > record.resetTime) {
-      requestCounts.delete(key);
+      keysToDelete.push(key);
     }
-  }
+  });
+  
+  keysToDelete.forEach(key => {
+    requestCounts.delete(key);
+  });
 }
 
 // 预设的验证规则
